@@ -79,3 +79,47 @@ function updateTitles(scroll) {
         }
     });
 }
+
+    // desplegar div
+    const btnDesplegar = document.getElementById('btn-desplegar');
+const divDesplegable = document.getElementById('div-desplegable');
+const contentToHide = document.querySelectorAll('.titles-container, .floating-container, .text-container');
+const btnCerrar = document.getElementById('btn-cerrar');
+
+// Función para ocultar elementos con transición
+function hideContent() {
+    contentToHide.forEach(element => {
+        element.classList.remove('visible');
+        element.classList.add('hidden');
+    });
+}
+
+// Función para mostrar elementos con transición
+function showContent() {
+    contentToHide.forEach(element => {
+        element.classList.remove('hidden');
+        element.classList.add('visible');
+    });
+}
+
+// Evento para desplegar el div
+btnDesplegar.addEventListener('click', () => {
+    const isHidden = divDesplegable.style.bottom === '0%';
+    if (isHidden) {
+        // Volver a la posición inicial
+        divDesplegable.style.bottom = '-100%';
+        showContent(); // Mostrar los elementos
+    } else {
+        // Desplegar el div
+        divDesplegable.style.bottom = '0%';
+        btnDesplegar.style.bottom = '100%'; // Mueve el botón junto con el div
+        hideContent(); // Ocultar los elementos
+    }
+});
+
+// Evento para cerrar el div desplegable
+btnCerrar.addEventListener('click', () => {
+    divDesplegable.style.bottom = '-100%'; // Cierra el div
+    btnDesplegar.style.bottom = '0px'; // Devuelve el botón de despliegue a la vista
+    showContent(); // Mostrar de nuevo los elementos
+});
