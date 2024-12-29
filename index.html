@@ -9,20 +9,23 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Imagen estática al principio (header) -->
+    <!-- (header) -->
     <div class="image-container">
-        <img src="Imagenes/LogoWeb.png" alt="Imagen Estática">
+        <img src="imagenes/LogoWeb.png" alt="Imagen Estática">
     </div>
 
     <div id="div-desplegable">
         <button id="btn-cerrar">
-            <img src="imagenes/CloseBtn.png" alt="Cerrar" class="close-icon">
+            <img src="imagenes/CloseBtn.png" alt="Cerrar">
         </button>
-        <!-- Contenido del div desplegable -->
-        <p>Contenido del div desplegable</p>
+        <div class="empty-space"></div>
+        <h2 class="grid-title">Nuestros Servicios</h2>
+        <div id="grid-container">
+          <!-- Las tarjetas simples se generarán aquí dinámicamente -->
+        </div>
     </div>
 
-    <!-- Botón Desplegar (Imagen) -->
+    <!-- Botón Desplegar -->
     <img id="btn-desplegar" src="imagenes\exploreBTN.png" alt="Botón desplegable">
 
     <!-- Contenedor de los títulos -->
@@ -36,31 +39,13 @@
 
     <!-- Contenedor para los cuadros en perspectiva -->
     <div class="floating-container">
-        <div class="perspective-box"><img src="imagenes\1opcion1.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
-        <div class="perspective-box"><img src="imagenes\2opcion2.png" alt=""></div>
     </div>
-
+    <!-- Contenedor de los textos -->
     <div class="text-container">
         <div class="textcontent" id="text1">Una empresa comercializadora optimiza el proceso de adquisición de productos para las empresas, proporcionando acceso a precios competitivos y a una variedad más amplia de productos. Esto ahorra tiempo y dinero, permitiendo que las empresas se enfoquen en su actividad principal.</div>
-        <div class="empty-title"></div> <!-- Título vacío para crear espacio -->
+        <div class="empty-title"></div> <!-- Título vacío para crear espacio de scroll -->
         <div class="textcontent" id="text2">Trabajar con una empresa comercializadora permite a las empresas obtener productos de calidad a precios más bajos, gracias a su poder de compra a gran escala. Además, gestionan todo el proceso logístico, ahorrando tiempo y esfuerzo a sus clientes, lo que mejora la eficiencia general.</div>
-        <div class="empty-title"></div> <!-- Título vacío para crear espacio -->
+        <div class="empty-title"></div> <!-- Título vacío para crear espacio de scroll -->
         <div class="textcontent" id="text3">Las empresas comercializadoras facilitan la adquisición de productos y servicios, asegurando mejores precios y calidad. Al ofrecer soluciones integrales, como gestión de inventarios y distribución, ayudan a las empresas a optimizar sus operaciones, reducir riesgos y centrarse en su crecimiento.</div>
     </div>
 
