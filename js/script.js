@@ -72,45 +72,8 @@ window.addEventListener('wheel', (event) => {
   updateTitles(scrollPosition);
 }, { passive: false });
 // ===========================================================================================================================
-// Función para generar las tarjetas en el div desplegable
-function generateDropDownCards(images) {
-    const container = document.querySelector('#grid-container'); // Contenedor del div desplegable
-  
-    images.forEach(image => {
-      // Crear el div para la tarjeta de perspectiva
-      const perspectiveBox = document.createElement('div');
-      perspectiveBox.classList.add('simple-card');
-  
-      // Crear la etiqueta <img> para la imagen
-      const img = document.createElement('img');
-      img.src = image.src; // Asignar la ruta de la imagen
-      img.alt = ''; // Puedes agregar una descripción si lo deseas
-  
-      // Agregar la imagen a la tarjeta
-      perspectiveBox.appendChild(img);
-  
-      // Agregar la tarjeta al contenedor
-      container.appendChild(perspectiveBox);
-    });
-  }
-  
-  // Función para cargar el archivo JSON y generar las tarjetas
-  function loadImages() {
-    fetch(jsonFile)
-      .then(response => response.json()) // Parsear el JSON
-      .then(images => {
-        console.log('Imágenes cargadas:', images); // Verifica si las imágenes se cargan correctamente
-        generatePerspectiveBoxes(images); // Llamar a la función para generar las tarjetas en el contenedor flotante
-        generateDropDownCards(images); // Llamar a la función para generar las tarjetas en el div desplegable
-      })
-      .catch(error => {
-        console.error('Error al cargar el archivo JSON:', error);
-      });
-  }
-  
-  // Llamar a la función para cargar las imágenes cuando la página esté lista
-  window.addEventListener('DOMContentLoaded', loadImages);
-  
+// Función para rellenar en el div desplegable
+
 // ===========================================================================================================================
 // Actualización de los cuadros en perspectiva
 function updatePerspectiveBoxes(scroll) {
@@ -198,17 +161,9 @@ function showContent() {
 // ===========================================================================================================================
 // Evento para desplegar el div
 btnDesplegar.addEventListener('click', () => {
-  const isHidden = divDesplegable.style.bottom === '0%';
-  if (isHidden) {
-    // Volver a la posición inicial
-    divDesplegable.style.bottom = '-100%';
-    showContent(); // Mostrar los elementos
-  } else {
-    // Desplegar el div
     divDesplegable.style.bottom = '0%';
     btnDesplegar.style.bottom = '100%'; // Mueve el botón junto con el div
     hideContent(); // Ocultar los elementos
-  }
 });
 
 // Evento para cerrar el div desplegable
@@ -216,4 +171,51 @@ btnCerrar.addEventListener('click', () => {
   divDesplegable.style.bottom = '-100%'; // Cierra el div
   btnDesplegar.style.bottom = '0px'; // Devuelve el botón de despliegue a la vista
   showContent(); // Mostrar de nuevo los elementos
+});
+
+
+// ===========================================================================================================================
+// Referencias a los botones
+const btnNosotros = document.getElementById('btn-nosotros');
+const btnServicios = document.getElementById('btn-servicios');
+const btnContacto = document.getElementById('btn-contacto');
+const tabContent = document.getElementById('tab-content');
+
+// Función para mostrar contenido según el botón presionado
+function showTabContent(content) {
+  tabContent.innerHTML = content;
+  tabContent.classList.add('visible');
+}
+
+// Eliminar clase de visibilidad antes de cargar nuevo contenido
+function resetTabContent() {
+  tabContent.classList.remove('visible');
+  setTimeout(() => {
+    tabContent.innerHTML = ''; // Limpiar contenido antes de cargar el nuevo
+  }, 500); // Tiempo suficiente para la transición de opacidad
+}
+
+// Eventos de clic en los botones
+btnNosotros.addEventListener('click', () => {
+  resetTabContent();
+  setTimeout(() => {
+    const content = '<h2>Nosotros</h2><p>Este es el contenido sobre nuestra empresa.</p>';
+    showTabContent(content);
+  }, 500);
+});
+
+btnServicios.addEventListener('click', () => {
+  resetTabContent();
+  setTimeout(() => {
+    const content = '<h2>Nuestros Servicios</h2><p>Información sobre los servicios que ofrecemos.</p>';
+    showTabContent(content);
+  }, 500);
+});
+
+btnContacto.addEventListener('click', () => {
+  resetTabContent();
+  setTimeout(() => {
+    const content = '<h2>Contacto</h2><p>Formulario de contacto e información de contacto.</p>';
+    showTabContent(content);
+  }, 500);
 });

@@ -105,7 +105,7 @@ body {
     color: rgb(43, 43, 43);
     position: absolute;
     bottom: 300px; 
-    width: 400px; /* Ocupa todo el ancho */
+    width: 100%; /* Ocupa todo el ancho */
     text-align: center;
     z-index: 5; /* sobre los cuadros */
     left: 50%; /* Centrado horizontal */
@@ -122,11 +122,11 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    justify-content: center;
     align-items: center;
     z-index: 15;
     transition: bottom 0.5s ease-in-out;
     overflow: hidden;
+    bottom: -100%;
 }
 
 #btn-desplegar {
@@ -208,3 +208,62 @@ body {
     white-space: nowrap;  /* Evita que las filas se ajusten al contenedor */
     justify-content: start; /* Alinea el contenido al inicio (izquierda) */
 }
+
+
+/* ======================================= contenido del div desplegable ============================================= */
+#tab-container {
+    position: relative;
+    width: 100%;
+    margin-top: 150px;
+  }
+  
+  #tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10; /* Para asegurarnos de que los botones estén sobre el contenido */
+  }
+  
+  .tab-btn {
+    padding: 12px 25px;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.1s ease;
+  }
+  
+  .tab-btn:hover {
+    opacity: 0.8;
+  }
+  
+  #btn-nosotros {
+    color: #77DD77;
+  }
+  
+  #btn-servicios {
+    color: #FFB3B3;
+  }
+  
+  #btn-contacto {
+    color: #A2C2E8;
+  }
+  
+  #tab-content {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    padding: 20px;
+    border-top: 2px solid #ccc;
+  }
+  
+  #tab-content.visible {
+    opacity: 1;
+  }
+  
+
+  /* ======================================= contenido del div desplegable ============================================= */
