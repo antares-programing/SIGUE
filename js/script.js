@@ -215,7 +215,167 @@ btnServicios.addEventListener('click', () => {
 btnContacto.addEventListener('click', () => {
   resetTabContent();
   setTimeout(() => {
-    const content = '<h2>Contacto</h2><p>Formulario de contacto e información de contacto.</p>';
-    showTabContent(content);
+    // Contenido para el formulario de contacto
+    const content = `
+      <div class="curso_container">
+          <div class="curso_content_details">
+              <div class="contact_container">
+                  <div class="contact_info_container">
+                      <ul>
+                          <li><h4 class="curso_content_title">Contacto Empresa</h4>
+                              <p>Si quieres capacitar a tu personal, contactanos via email a somosigue@gmail.com</p>
+                          </li>
+                          <li><h4 class="curso_content_title">Contacto Estudiante</h4>
+                              <p>Si tienes algun problema para postularte a las becas o estas teniendo problemas durante tu curso, contactanos via email a somosigue@gmail.com</p>
+                          </li>
+                          <li><h4 class="curso_content_title">Contacto Profesorado</h4>
+                              <p>Si quieres formar parte de nuestro equipo de profesores e impartir tus cursos en nuestra academia, contactanos via email a somosigue@gmail.com</p>
+                          </li>
+                          <div id="media_IMG_Container">
+                              <img id="cellphone_BTN" class="media_BTN" src="imagenes/Cellphone_icon.png" alt="">
+                              <div id="cellphone_number_Container">
+                                  <p>096565289</p>
+                              </div>
+                              <img id="instagram_BTN" class="media_BTN" src="imagenes/Instagram_icon.png" alt="">
+                              <img id="facebook_BTN" class="media_BTN" src="imagenes/Facebook_icon.png" alt="">
+                              <img id="linkedin_BTN" class="media_BTN" src="imagenes/Linkedin_icon.png" alt="">
+                          </div>
+                      </ul>
+                  </div>
+                  <div class="contact_form_container_contacto">
+                      <form id="contact-form-contacto">
+                          <label for="name">Nombre Completo:</label>
+                          <input type="text" id="name" name="name" required>
+                          <br>
+                          <label for="email">Correo Electrónico:</label>
+                          <input type="email" id="email" name="email" required>
+                          <br>
+                          <label for="message">Mensaje:</label>
+                          <textarea id="message" name="message" required></textarea>
+                          <br>
+                          <div>
+                              <input type="checkbox" id="terms" name="terms" required>
+                              <label for="terms">He leído y acepto los <a href="#" id="termsLink">términos y condiciones</a></label>
+                          </div>
+                          <br>
+                          <button type="submit" id="send_email_BTN">Enviar</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div id="termsOverlay"></div>
+  
+      <!-- Modal for the terms and conditions -->
+    <div id="termsModal">
+        <h2>Términos y Condiciones</h2>
+        <p>
+            Estos términos y condiciones explican cómo el equipo de SIGUE recopila, usa y protege la información personal que nos proporcionas a través de nuestros formularios de contacto.
+            <br><br>
+            <strong>1. Información que Recopilamos</strong>
+            <br>
+            Recopilamos los siguientes datos personales:
+            <ul>
+                <li>Nombre completo</li>
+                <li>Correo electrónico</li>
+            </ul>
+            <br>
+            <strong>2. Finalidad de la Recopilación de Datos</strong>
+            <br>
+            Usamos la información recopilada para los siguientes fines:
+            <ul>
+                <li>Ponernos en contacto contigo para proporcionarte información sobre becas estudiantiles.</li>
+                <li>Enviarte información relevante sobre nuestros cursos y programas educativos.</li>
+                <li>Mejorar nuestros servicios y personalizar tu experiencia con nosotros.</li>
+            </ul>
+            <br>
+            <strong>3. Retención de Datos</strong>
+            <br>
+            Conservaremos tus datos personales durante el tiempo que sea necesario para cumplir con los fines descritos en estos términos y condiciones, a menos que la ley exija o permita un período de retención más largo.
+            <br><br>
+            <strong>4. Compartición de Datos</strong>
+            <br>
+            No compartimos tus datos personales con terceros, excepto cuando sea necesario para cumplir con las obligaciones legales o con tu consentimiento explícito.
+            <br><br>
+            <strong>5. Seguridad de los Datos</strong>
+            <br>
+            Implementamos medidas de seguridad técnicas y organizativas adecuadas para proteger tus datos personales contra el acceso no autorizado, la divulgación, alteración o destrucción.
+            <br><br>
+            <strong>6. Derechos de los Usuarios</strong>
+            <br>
+            Tienes derecho a acceder, rectificar, eliminar u oponerte al uso de tus datos personales. Para ejercer estos derechos, puedes ponerte en contacto con nosotros a través del correo electrónico <a href="mailto:somosigue@gmail.com">somosigue@gmail.com</a>.
+            <br><br>
+            <strong>7. Contacto</strong>
+            <br>
+            Si tienes alguna pregunta o inquietud sobre nuestra política de privacidad o el manejo de tus datos personales, por favor contáctanos a:
+            <br>
+            Soluciones Integrales de Gestion y Unificacion Empresarial (SIGUE)
+            <br>
+            Correo electrónico: <a href="mailto:somosigue@gmail.com">somosigue@gmail.com</a>
+            <br>
+            Teléfono: 096565289
+        </p>
+        <button class="CIEP_GenericBTN" id="closeModal">Cerrar</button>
+    </div>
+    `;
+    showTabContent(content);  // Muestra el contenido dinámico
+
+    // Asignación de eventos a los botones después de que el contenido se haya cargado
+    const CELPHONEBTN = document.getElementById("cellphone_BTN");
+    const INSTAGRAMBTN = document.getElementById("instagram_BTN");
+    const FACEBOOKBTN = document.getElementById("facebook_BTN");
+    const LINKEDINBTN = document.getElementById("linkedin_BTN");
+    const TERMSLINK = document.getElementById("termsLink");
+    const TERMSMODAL = document.getElementById("termsModal");
+    const TERMSSOVERLAY = document.getElementById("termsOverlay");
+    const CLOSEMODAL = document.getElementById("closeModal");
+
+    // Agregar eventos
+    if (CELPHONEBTN) {
+        CELPHONEBTN.addEventListener("click", () => {
+            const cellphoneNumberContainer = document.getElementById("cellphone_number_Container");
+            cellphoneNumberContainer.classList.toggle("expanded");
+        });
+    }
+
+    if (INSTAGRAMBTN) {
+        INSTAGRAMBTN.addEventListener("click", () => {
+            window.open("https://www.instagram.com/institutociep/", "_blank");
+        });
+    }
+
+    if (FACEBOOKBTN) {
+        FACEBOOKBTN.addEventListener("click", () => {
+            window.open("https://www.facebook.com/profile.php?id=61560180855472", "_blank");
+        });
+    }
+
+    if (LINKEDINBTN) {
+        LINKEDINBTN.addEventListener("click", () => {
+            window.open("https://www.linkedin.com/company/instituto-ciep/", "_blank");
+        });
+    }
+
+    if (TERMSLINK) {
+        TERMSLINK.addEventListener('click', function(event) {
+            event.preventDefault();
+            TERMSMODAL.style.display = 'block';
+            TERMSSOVERLAY.style.display = 'block';
+        });
+    }
+
+    if (CLOSEMODAL) {
+        CLOSEMODAL.addEventListener('click', function() {
+            TERMSMODAL.style.display = 'none';
+            TERMSSOVERLAY.style.display = 'none';
+        });
+    }
+
+    if (TERMSSOVERLAY) {
+        TERMSSOVERLAY.addEventListener('click', function() {
+            TERMSMODAL.style.display = 'none';
+            TERMSSOVERLAY.style.display = 'none';
+        });
+    }
   }, 500);
 });

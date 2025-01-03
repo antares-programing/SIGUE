@@ -267,3 +267,217 @@ body {
   
 
   /* ======================================= contenido del div desplegable ============================================= */
+
+/* Estilos para .curso_container */
+.curso_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #2e2e2e; /* Color de fondo */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para .curso_content_details */
+.curso_content_details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Estilos para .contact_container */
+.contact_container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+}
+
+/* Estilos para .contact_info_container */
+.contact_info_container {
+    flex: 1;
+    min-width: 300px; /* Asegura que cada columna tenga un tamaño mínimo */
+    max-width: 500px; /* Controla el ancho máximo */
+}
+
+/* Estilos para el contenedor del formulario */
+.contact_form_container_contacto {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Otros estilos generales */
+.contact_form_container_contacto label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.contact_form_container_contacto input[type="text"],
+.contact_form_container_contacto input[type="email"],
+.contact_form_container_contacto textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.contact_form_container_contacto textarea {
+    min-height: 100px;
+}
+
+.contact_form_container_contacto input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Estilo para los botones de redes sociales */
+.media_BTN{
+    height: 40px;
+    transition: all 0.5s;
+    z-index: 2;
+}
+.media_BTN:hover{
+    height: 50px;
+}
+
+/* Estilos para el modal de términos y condiciones */
+#termsModal {
+    display: none; /* Se activa cuando el modal es abierto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(2, 2, 2, 0.603);
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    width: 80%;
+    max-width: 1500px;
+}
+
+/* Estilos para el overlay de los términos */
+#termsOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Se activa cuando el overlay es abierto */
+    z-index: 9998;
+}
+
+/* Estilo para los enlaces dentro del modal */
+#termsLink {
+    color: #1a73e8;
+    text-decoration: underline;
+}
+
+/* Estilo para el botón cerrar del modal */
+.CIEP_GenericBTN{
+    height: 40px;
+    background-color: #202020;
+    color: rgb(243, 243, 243);
+    border: solid 1px white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+}
+.CIEP_GenericBTN:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+/* Estilos para el contenedor pequeño debajo del formulario */
+.little_div {
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+}
+
+/* Estilos adicionales para la animación de fade in y fade out */
+.fadein {
+    animation: fadeIn 1s ease-in;
+}
+
+.fadeout {
+    animation: fadeOut 1s ease-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Estilos para el contenedor de teléfono */
+#cellphone_number_Container {
+    background: #242424;
+    border: #757575 solid 2px;
+    height: 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    align-items: center;
+    width: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-left: -30px;
+    transition: width 0.5s ease-in-out;
+}
+
+#cellphone_number_Container.expanded {
+    width: 120px;
+}
+
+/* Estilos para los botones de contacto */
+.contact_info_container li {
+    margin-bottom: 15px;
+}
+
+/* Estilos para el botón de envío */
+#send_email_BTN {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#send_email_BTN:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#send_email_BTN:hover:not(:disabled) {
+    background-color: #1559c3;
+}
+
+#media_IMG_Container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+    height: 70px;
+}
