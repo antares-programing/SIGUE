@@ -3,12 +3,18 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100vh;
-    overflow: hidden; /* scroll nativo */
+    overflow: hidden;
+    transition: background 0.5s ease;
+    background-image: url(../imagenes/generalBackground.png);
+    background-size: 120%;
+    background-position: center calc(50% - 100px);
+    background-color: #000;
+    background-repeat: no-repeat;
 }
 
 .image-container {
     width: 100%;
-    height: 100px; 
+    height: 200px; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,28 +26,39 @@ body {
 
 .image-container img {
     max-width: 100%;
-    height: 100px;
+    height: 150px;
 }
+
+/* ================================================================================ */
 
 .titles-container {
-    font-family: 'Times New Roman', Times, serif;
     position: absolute;
-    top: 150px; 
+    top: 50%;
+    left: 50%;
     width: 100%;
+    padding: 100px;
+    transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 5; /* sobre los cuadros */
-}
-
-.title {
-    font-size: 42px;
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Suave transición al ocultar */
+    background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgb(0, 0, 0) 30%, rgb(0, 0, 0) 70%, rgba(172,172,172,0) 100%);
+  }
+  
+  .title {
+    font-size: 1.5rem;
     font-weight: bold;
-    opacity: 0;
-    transition: opacity 1s ease-out;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    margin: 20px 0; /* Espacio entre los títulos */
-}
+    color: #ffffff;
+    margin: 30px 0;
+  }
+  
+  .hidden {
+    opacity: 0; /* Ocultar títulos */
+  }
+  
+  
+
+  /* ================================================================================ */
 
 .floating-container {
     position: relative;
@@ -51,7 +68,7 @@ body {
     justify-content: center;
     align-items: center;
     perspective: 1500px;
-    margin-top: 270px; /* espacio para la imagen y los títulos */
+    margin-top: 270px; 
 }
 
 .floating-box, .perspective-box {
@@ -74,14 +91,15 @@ body {
     width: 200px;
     height: 150px;
     font-size: 18px;
+    transform: scale(1) translate(0px, -275.7px);
 }
 .perspective-box img {
-    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-    object-fit: cover; /* Ajusta la imagen sin distorsión, recortando si es necesario */
-    display: block; /* Elimina espacios en blanco alrededor de la imagen */
+    width: 100%; 
+    object-fit: cover; 
+    display: block; 
 }
 
-/* Background */
+
 
 body {
     margin: 0;
@@ -96,7 +114,7 @@ body {
     font-family: 'Times New Roman', Times, serif;
     font-weight: normal;
     opacity: 0;
-    transition: opacity 1s ease-out;
+    transition: opacity 0.5s ease-out;
     position: absolute;
     width: 100%;
     text-align: center;
@@ -105,11 +123,11 @@ body {
     color: rgb(43, 43, 43);
     position: absolute;
     bottom: 300px; 
-    width: 100%; /* Ocupa todo el ancho */
+    width: 100%;
     text-align: center;
-    z-index: 5; /* sobre los cuadros */
-    left: 50%; /* Centrado horizontal */
-    transform: translateX(-50%); /* Ajuste para centrar */
+    z-index: 5; 
+    left: 50%; 
+    transform: translateX(-50%); 
 }
 
 /* desplegable */
@@ -135,49 +153,49 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
-    width: 300px; /* Tamaño de la imagen */
+    width: 300px;
     height: auto;
     cursor: pointer;
-    transition: bottom 0.5s ease-in-out; /* Movimiento sincronizado */
+    transition: bottom 0.5s ease-in-out; 
 }
 
 .hidden {
     opacity: 0;
-    pointer-events: none; /* Evitar interacción mientras están ocultos */
-    transition: opacity 0.5s ease-in-out; /* Transición suave */
+    pointer-events: none; 
+    transition: opacity 0.5s ease-in-out; 
 }
 
 .visible {
     opacity: 1;
-    pointer-events: auto; /* Recuperar interacción */
-    transition: opacity 0.5s ease-in-out; /* Transición suave */
+    pointer-events: auto; 
+    transition: opacity 0.5s ease-in-out; 
 }
 
 #btn-cerrar {
-    position: absolute;
+    position: fixed;
     top: 20px;
-    right: 20px;
+    right: 30px;
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 20; /* Asegúrate de que esté encima de todo */
+    z-index: 20; 
 }
 
 #btn-cerrar img {
-    width: 32px; /* Tamaño del ícono */
+    width: 32px; 
     height: 32px;
-    transition: transform 0.3s ease; /* Efecto al pasar el mouse */
+    transition: transform 0.5s ease; 
 }
 
 #btn-cerrar img:hover {
-    transform: scale(1.1); /* Agranda ligeramente al pasar el mouse */
+    transform: scale(1.1); 
 }
-/* Estilo para las tarjetas simples en el div desplegable */
+
 .simple-card {
-    width: 100%;      /* Ancho fijo de la tarjeta */
-    height: auto;     /* Alto fijo de la tarjeta */
-    margin: 10px;      /* Espaciado entre las tarjetas */
-    overflow: hidden;  /* Ocultar cualquier parte de la imagen que sobresalga */
+    width: 100%;     
+    height: auto;    
+    margin: 10px;     
+    overflow: hidden;  
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -185,9 +203,9 @@ body {
 }
 
 .simple-card img {
-    width: 100%;      /* Las imágenes cubrirán el ancho de la tarjeta */
-    height: 100%;     /* Las imágenes cubrirán la altura de la tarjeta */
-    object-fit: contain; /* Mantiene la proporción de la imagen sin distorsión */
+    width: 100%;     
+    height: 100%;    
+    object-fit: contain; 
 }
 
 .simple-card:hover {
@@ -198,15 +216,15 @@ body {
 #grid-container {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Asegura que las tarjetas mantengan un ancho mínimo de 200px */
-    grid-auto-rows: 270px; /* Las filas mantienen una altura fija de 150px */
-    gap: 10px;            /* Espacio entre las tarjetas */
-    width: 90%;           /* El contenedor ocupa todo el ancho disponible */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 270px; 
+    gap: 10px;          
+    width: 90%;          
     height: 70%;
-    overflow-x: hidden;     /* Permite desplazamiento horizontal */
-    overflow-y: auto;   /* Evita desplazamiento vertical */
-    white-space: nowrap;  /* Evita que las filas se ajusten al contenedor */
-    justify-content: start; /* Alinea el contenido al inicio (izquierda) */
+    overflow-x: hidden;   
+    overflow-y: auto;  
+    white-space: nowrap; 
+    justify-content: start; 
 }
 
 
@@ -214,16 +232,19 @@ body {
 #tab-container {
     position: relative;
     width: 100%;
-    margin-top: 150px;
+    height: 90vh;
   }
   
   #tabs {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
     position: sticky;
     top: 0;
-    z-index: 10; /* Para asegurarnos de que los botones estén sobre el contenido */
+    z-index: 10; 
+    padding-top: 50px;
+    border-bottom: 2px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.8);
   }
   
   .tab-btn {
@@ -258,7 +279,7 @@ body {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     padding: 20px;
-    border-top: 2px solid #ccc;
+    height: 90%;
   }
   
   #tab-content.visible {
@@ -268,7 +289,7 @@ body {
 
   /* ======================================= contenido del div desplegable ============================================= */
 
-/* Estilos para .curso_container */
+
 .curso_container {
     display: flex;
     flex-direction: column;
@@ -276,12 +297,12 @@ body {
     margin: 20px auto;
     max-width: 1200px;
     padding: 20px;
-    background-color: #2e2e2e; /* Color de fondo */
+    background-color: #2e2e2e; 
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para .curso_content_details */
+
 .curso_content_details {
     display: flex;
     flex-direction: column;
@@ -289,7 +310,7 @@ body {
     margin-top: 20px;
 }
 
-/* Estilos para .contact_container */
+
 .contact_container {
     display: flex;
     justify-content: space-between;
@@ -298,14 +319,14 @@ body {
     width: 100%;
 }
 
-/* Estilos para .contact_info_container */
+
 .contact_info_container {
     flex: 1;
-    min-width: 300px; /* Asegura que cada columna tenga un tamaño mínimo */
-    max-width: 500px; /* Controla el ancho máximo */
+    min-width: 300px; 
+    max-width: 500px; 
 }
 
-/* Estilos para el contenedor del formulario */
+
 .contact_form_container_contacto {
     flex: 1;
     min-width: 300px;
@@ -355,7 +376,7 @@ body {
 
 /* Estilos para el modal de términos y condiciones */
 #termsModal {
-    display: none; /* Se activa cuando el modal es abierto */
+    display: none; 
     position: fixed;
     top: 50%;
     left: 50%;
@@ -368,7 +389,7 @@ body {
     max-width: 1500px;
 }
 
-/* Estilos para el overlay de los términos */
+
 #termsOverlay {
     position: fixed;
     top: 0;
@@ -376,17 +397,17 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    display: none; /* Se activa cuando el overlay es abierto */
+    display: none; 
     z-index: 9998;
 }
 
-/* Estilo para los enlaces dentro del modal */
+/* estilo enlaces dentro del modal */
 #termsLink {
     color: #1a73e8;
     text-decoration: underline;
 }
 
-/* Estilo para el botón cerrar del modal */
+/* estilo botón cerrar del modal */
 .CIEP_GenericBTN{
     height: 40px;
     background-color: #202020;
@@ -399,16 +420,16 @@ body {
 .CIEP_GenericBTN:hover {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
+    border: solid 1px rgb(0, 0, 0);
+    border-radius: 4px;
 }
 
-/* Estilos para el contenedor pequeño debajo del formulario */
 .little_div {
     width: 100%;
     height: 20px;
     margin-top: 20px;
 }
 
-/* Estilos adicionales para la animación de fade in y fade out */
 .fadein {
     animation: fadeIn 1s ease-in;
 }
@@ -427,7 +448,7 @@ body {
     100% { opacity: 0; }
 }
 
-/* Estilos para el contenedor de teléfono */
+
 #cellphone_number_Container {
     background: #242424;
     border: #757575 solid 2px;
@@ -447,21 +468,22 @@ body {
     width: 120px;
 }
 
-/* Estilos para los botones de contacto */
+
 .contact_info_container li {
     margin-bottom: 15px;
 }
 
-/* Estilos para el botón de envío */
+
 #send_email_BTN {
-    background-color: #1a73e8;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+    height: 40px;
+    background-color: #202020;
+    color: rgb(243, 243, 243);
+    border: solid 1px white;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin: 10px;
+    width: 50%;
+    min-width: 50px;
 }
 
 #send_email_BTN:disabled {
@@ -470,7 +492,10 @@ body {
 }
 
 #send_email_BTN:hover:not(:disabled) {
-    background-color: #1559c3;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: solid 1px rgb(0, 0, 0);
+    border-radius: 4px;
 }
 
 #media_IMG_Container{
@@ -480,4 +505,265 @@ body {
     justify-content: center;
     column-gap: 20px;
     height: 70px;
+}
+
+  /* ======================================= contenido de nosotros ============================================= */
+  .scroll-container {
+    position: relative;
+    height: 70vh; 
+    overflow-y: scroll;
+  }
+
+  .scroll-container .background-nosotros {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1; 
+  }
+
+  .scroll-container::-webkit-scrollbar {
+    width: 8px; 
+  }
+
+  .scroll-container::-webkit-scrollbar-track {
+    background: #444; 
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 4px;
+  }
+
+  /* Contenedor principal de las tarjetas */
+  .cards-container-nosotros {
+    min-height: fit-content; 
+    background-image: url(../imagenes/aboutUsBackground.png);
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(12, calc(100px + 10%));
+    gap: 50px;
+    padding: 20px;
+  }
+
+  /* Estilo de las tarjetas */
+  .content-card-nosotros {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1); 
+    color: #fff; 
+    border: 1px solid #888; 
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+  }
+
+  .content-card-nosotros .text-container {
+    margin-bottom: 10px;
+  }
+
+  .content-card-nosotros .image-container {
+    text-align: center;
+  }
+
+  .content-card-nosotros img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  /* Estilo para alternar las posiciones */
+  .content-card-nosotros:nth-child(odd) {
+    grid-column: 1; /* Izquierda */
+  }
+
+  .content-card-nosotros:nth-child(even) {
+    grid-column: 2; /* Derecha */
+  }
+
+
+/* ==================================================================================== */
+/* Estilos para el menú lateral */
+#menu-servicios {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 90%;
+    background: #000000;
+    color: white;
+    position: absolute;
+    border-right: #ffffff 2px solid;
+    z-index: 11; 
+    left: 0;
+    top: 128px;
+    bottom: 0;
+    padding: 20px;
+    transition: transform 0.5s ease-in-out;
+    
+}
+
+#menu-servicios.oculto {
+    transform: translateX(-100%);
+}
+
+#btn-ocultar-menu {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: -30px;
+}
+
+/* Estilos para el contenedor del tarjetas estilo carrusel */
+#contenedor-tarjetas {
+    margin-left: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    height: 90%;
+}
+
+.carrusel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 90%;
+}
+
+.carrusel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 90%;
+}
+
+.tarjeta {
+    width: 45%; /* Ajustado dos tarjetas en una fila */
+    max-width: 400px;
+    height: 90%;
+    background: gray;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    flex-shrink: 0;
+}
+
+.tarjeta img {
+    max-width: 100%;
+    max-height: 100px;
+    margin-top: 10px;
+}
+
+/* Botones del carrusel */
+.btn-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.btn-carrusel:first-of-type {
+    left: 0;
+}
+
+.btn-carrusel:last-of-type {
+    right: 0;
+}
+
+/* Efecto Fade en bordes laterales */
+.carrusel-wrapper::before,
+.carrusel-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to left, rgb(0, 0, 0), transparent);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.carrusel-wrapper::before {
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.carrusel-wrapper::after {
+    right: 0;
+}
+
+/* Responsividad */
+@media (max-width: 800px) {
+    #menu-servicios {
+        width: 100%;
+        height: auto;
+        position: static;
+        text-align: center;
+    }
+    
+    #contenedor-tarjetas {
+        margin-left: 0;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .tarjeta {
+        width: 90%; /* Para que ocupe casi todo el ancho en móviles */
+        max-width: 300px;
+    }
+    
+    .btn-carrusel {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .btn-carrusel:first-of-type {
+        left: 5px;
+    }
+    
+    .btn-carrusel:last-of-type {
+        right: 5px;
+    }
+}
+
+#btn-agregar-servicio {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 50%;
+    min-width: 100px;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    align-self: center;
+}
+
+#btn-agregar-servicio:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+#titulo-servicio {
+    margin-left: 10%;
 }

@@ -1,0 +1,84 @@
+{
+  "servicios": [
+    {
+      "titulo": "Desarrollo web",
+      "cantidad_tarjetas": 6,
+      "imagen_destacada": "imagenes/servicio1.jpg",
+      "tarjetas": [
+        {
+          "contenido": "Descripcion de la tarjeta 1 del servicio Desarrollo web.",
+          "imagen": ""
+        },
+        {
+          "contenido": "Descripcion de la tarjeta 2 del servicio Desarrollo web.",
+          "imagen": "imagenes/tarjeta2_servicio1.jpg"
+        },
+        {
+          "contenido": "Descripcion de la tarjeta 3 del servicio Desarrollo web.",
+          "imagen": ""
+        },
+        {
+          "contenido": "Descripcion de la tarjeta 4 del servicio Desarrollo web.",
+          "imagen": "imagenes/tarjeta4_servicio1.jpg"
+        },
+        {
+          "contenido": "Descripcion de la tarjeta 5 del servicio Desarrollo web.",
+          "imagen": "imagenes/tarjeta4_servicio1.jpg"
+        },
+        {
+          "contenido": "Descripcion de la tarjeta 6 del servicio Desarrollo web.",
+          "imagen": "imagenes/tarjeta4_servicio1.jpg"
+        }
+      ]
+    },
+    {
+      "titulo": "Comercializacion",
+      "cantidad_tarjetas": 2,
+      "imagen_destacada": "",
+      "tarjetas": [
+        {
+          "contenido": "Descripcion de la tarjeta 1 del servicio Comercializacion.",
+          "imagen": "imagenes/tarjeta1_servicio2.jpg"
+        },
+        {
+          "contenido": "Descripcion de la tarjeta 2 del servicio Comercializacion.",
+          "imagen": ""
+        }
+      ]
+    },
+    {
+      "titulo": "Ventas",
+      "cantidad_tarjetas": 3,
+      "imagen_destacada": "",
+      "tarjetas": [
+        {
+          "contenido": "Descripcion de la tarjeta 1 del servicio Ventas.",
+          "imagen": "imagenes/tarjeta1_servicio2.jpg"
+        },
+        {
+          "contenido": "Descripcion de la tarjeta 2 del servicio Ventas.",
+          "imagen": ""
+        },
+        {
+          "contenido": "Descripcion de la tarjeta 3 del servicio Ventas.",
+          "imagen": ""
+        }
+      ]
+    },
+    {
+      "titulo": "Consultoria",
+      "cantidad_tarjetas": 2,
+      "imagen_destacada": "",
+      "tarjetas": [
+        {
+          "contenido": "Descripcion de la tarjeta 1 del servicio Consultoria.",
+          "imagen": "imagenes/tarjeta1_servicio2.jpg"
+        },
+        {
+          "contenido": "Descripcion de la tarjeta 2 del servicio Consultoria.",
+          "imagen": ""
+        }
+      ]
+    }
+  ]
+}
